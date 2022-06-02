@@ -19,7 +19,7 @@ if (repoName === undefined || repoName === null) {
     process.exit(-1);
 }
 
-const gitCheckoutCommand = `git clone https://github.com/PrinceDeepu/deepesh-noddy.git ${repoName}`;
+const gitCheckoutCommand = `git clone https://github.com/PrinceDeepu/deepesh-noddy-client.git ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
 console.log(`Cloning the Repository with name ${repoName}`);
