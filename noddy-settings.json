@@ -1,0 +1,12 @@
+{
+    "path": {
+        "app": "./dist",
+        "routes": "./dist/router/Router",
+        "conf": {
+            "mail": "./dist/conf/MailConfig",
+            "conf": "./dist/conf/Config",
+            "db": "./dist/conf/dbConfig",
+            "autoLoad": "./dist/conf/AutoLoad"
+        }
+    }
+}

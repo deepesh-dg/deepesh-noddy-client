@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+    mongo:
+        image: mongo:latest
+        ports:
+            - "27017:27017"
+        env_file:
+            - ./env/mongo.env
+        volumes:
+            - noddy-data:/data/db
+
+    noddy:
+        build:
+            context: .
+            args:
+                NODE_ENV: development
+        command: npm run dev
+        depends_on:
+            - mongo
+        env_file:
+            - ./env/noddy.env
+        ports:
+            - "5500:5500"
+            - "3310:3310"
+        volumes:
+            - ./:/app
+            - /app/node_modules
+            - /app/dist
+
+volumes:
+    noddy-data:
