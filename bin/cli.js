@@ -30,11 +30,16 @@ if (!checkOut) process.exit(-1);
 console.log(`Installing dependencies for ${repoName}`);
 const installedDeps = runCommand(installDepsCommand);
 if (!installedDeps) process.exit(-1);
+runCommand(`cd ${repoName}`);
+runCommand(`rm -rf .git/`);
+runCommand(`git init`);
+runCommand(`git add .`);
+runCommand(`git commit --all -m "initial commit"`);
 
 console.log(
     `Congratulations, Now you are ready to use Noddy as your backend. Follow the following command to start`
 );
 console.log(`For Development`);
-console.log(`cd ${repoName} && npm run dev`);
+console.log(`npm run dev`);
 console.log(`For Production`);
-console.log(`cd ${repoName} && npm run build && npm run start`);
+console.log(`npm run build && npm run start`);
