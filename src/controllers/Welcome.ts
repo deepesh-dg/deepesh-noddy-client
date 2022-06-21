@@ -4,90 +4,80 @@ import { prototypes, Controller, lib, conf } from "@deepeshgupta/noddy";
 const debug = new lib.log.Logger({ moduleName: "app:controller-welcome" });
 
 export class Welcome extends Controller {
-  private appInfo;
+    private appInfo;
 
-  constructor() {
-    super();
-    this.appInfo = {
-      app: {
-        framework: conf.Config.get("app.name"),
-        developedBy: conf.Config.get("app.developedBy"),
-        social: conf.Config.get("app.social"),
-        version: conf.Config.get("app.version"),
-      },
-    };
-  }
+    constructor() {
+        super();
+        this.appInfo = {
+            app: {
+                framework: conf.Config.get("app.name"),
+                developedBy: conf.Config.get("app.developedBy"),
+                social: conf.Config.get("app.social"),
+                version: conf.Config.get("app.version"),
+            },
+        };
+    }
 
-  public get(req: Request, res: Response, next: NextFunction) {
-    res.locals = {
-      sendApi: {
-        status: prototypes.httpStatusCodes.OK,
-        headers: {},
-        body: {
-          ...this.appInfo,
-        },
-      },
-    };
+    public get(req: Request, res: Response, next: NextFunction) {
+        res.locals.sendApi = {
+            status: prototypes.httpStatusCodes.OK,
+            headers: {},
+            body: {
+                ...this.appInfo,
+            },
+        };
 
-    next();
-  }
+        next();
+    }
 
-  public post(req: Request, res: Response, next: NextFunction) {
-    res.locals = {
-      sendApi: {
-        status: prototypes.httpStatusCodes.OK,
-        headers: {},
-        body: {
-          ...req.body,
-          ...this.appInfo,
-        },
-      },
-    };
+    public post(req: Request, res: Response, next: NextFunction) {
+        res.locals.sendApi = {
+            status: prototypes.httpStatusCodes.OK,
+            headers: {},
+            body: {
+                ...req.body,
+                ...this.appInfo,
+            },
+        };
 
-    next();
-  }
+        next();
+    }
 
-  public patch(req: Request, res: Response, next: NextFunction) {
-    res.locals = {
-      sendApi: {
-        status: prototypes.httpStatusCodes.OK,
-        headers: {},
-        body: {
-          ...req.body,
-          ...this.appInfo,
-        },
-      },
-    };
+    public patch(req: Request, res: Response, next: NextFunction) {
+        res.locals.sendApi = {
+            status: prototypes.httpStatusCodes.OK,
+            headers: {},
+            body: {
+                ...req.body,
+                ...this.appInfo,
+            },
+        };
 
-    next();
-  }
+        next();
+    }
 
-  public put(req: Request, res: Response, next: NextFunction) {
-    res.locals = {
-      sendApi: {
-        status: prototypes.httpStatusCodes.OK,
-        headers: {},
-        body: {
-          ...req.body,
-          ...this.appInfo,
-        },
-      },
-    };
+    public put(req: Request, res: Response, next: NextFunction) {
+        res.locals.sendApi = {
+            status: prototypes.httpStatusCodes.OK,
+            headers: {},
+            body: {
+                ...req.body,
+                ...this.appInfo,
+            },
+        };
 
-    next();
-  }
+        next();
+    }
 
-  public delete(req: Request, res: Response, next: NextFunction) {
-    res.locals = {
-      sendApi: {
-        status: prototypes.httpStatusCodes.OK,
-        headers: {},
-        body: {
-          ...this.appInfo,
-        },
-      },
-    };
+    public delete(req: Request, res: Response, next: NextFunction) {
+        res.locals.sendApi = {
+            status: prototypes.httpStatusCodes.OK,
+            headers: {},
+            body: {
+                ...this.appInfo,
+            },
+        };
 
-    next();
-  }
+        next();
+    }
 }

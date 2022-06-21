@@ -1,6 +1,6 @@
 {
-    "name": "@deepeshgupta/noddy-client",
-    "version": "0.0.13",
+    "name": "@deepeshgupta/noddy-proj",
+    "version": "0.0.1",
     "description": "",
     "main": "dist/index.js",
     "bin": {
@@ -39,7 +39,7 @@
         "typescript": "^4.7.2"
     },
     "dependencies": {
-        "@deepeshgupta/noddy": "^0.6.2",
+        "@deepeshgupta/noddy": "^0.6.362",
         "express": "^4.18.1"
     }
 }
