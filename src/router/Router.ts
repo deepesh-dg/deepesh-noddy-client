@@ -1,5 +1,5 @@
 // import cors from "cors";
-import { prototypes, Router, conf, lib } from "@deepeshgupta/noddy";
+import { Router } from "@deepeshgupta/noddy";
 import { Index } from "../controllers/Index";
 import index from "./index.routes";
 

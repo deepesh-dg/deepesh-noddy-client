@@ -1,13 +1,13 @@
 {
     "path": {
         "app": "./dist",
-        "routes": "./dist/router/Router",
+        "routes": "./router/Router",
         "conf": {
-            "mail": "./dist/conf/MailConfig",
-            "conf": "./dist/conf/Config",
-            "db": "./dist/conf/dbConfig",
-            "autoLoad": "./dist/conf/AutoLoad"
+            "mail": "./conf/MailConfig",
+            "conf": "./conf/Config",
+            "db": "./conf/dbConfig",
+            "autoLoad": "./conf/AutoLoad"
         },
-        "middleware": "./dist/middlewares/app"
+        "middleware": "./middlewares/app"
     }
 }

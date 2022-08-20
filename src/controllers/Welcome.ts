@@ -1,10 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import { prototypes, Controller, lib, conf } from "@deepeshgupta/noddy";
 
-const debug = new lib.log.Logger({ moduleName: "app:controller-welcome" });
-
 export class Welcome extends Controller {
     private appInfo;
+    private debug = new lib.log.Logger({
+        moduleName: "app:controller-welcome",
+    });
 
     constructor() {
         super();

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { prototypes, Controller, lib, conf } from "@deepeshgupta/noddy";
+import { prototypes, Controller, conf } from "@deepeshgupta/noddy";
 
 export class WelcomeId extends Controller {
     private appInfo;
