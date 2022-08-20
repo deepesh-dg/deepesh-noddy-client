@@ -17,13 +17,10 @@ export class WelcomeId extends Controller {
     }
 
     public get(req: Request, res: Response, next: NextFunction) {
-        res.locals.sendApi = {
-            status: prototypes.httpStatusCodes.OK,
-            headers: {},
-            body: {
-                ...this.appInfo,
-                id: req.params.id,
-            },
+        res.locals.api.status = prototypes.httpStatusCodes.OK;
+        res.locals.api.body = {
+            ...this.appInfo,
+            id: req.params.id,
         };
 
         next();

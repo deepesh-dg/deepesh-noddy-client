@@ -20,65 +20,45 @@ export class Welcome extends Controller {
     }
 
     public get(req: Request, res: Response, next: NextFunction) {
-        res.locals.sendApi = {
-            status: prototypes.httpStatusCodes.OK,
-            headers: {},
-            body: {
-                ...this.appInfo,
-            },
+        res.locals.api.status = prototypes.httpStatusCodes.OK;
+        res.locals.api.body = {
+            ...this.appInfo,
         };
-
         next();
     }
 
     public post(req: Request, res: Response, next: NextFunction) {
-        res.locals.sendApi = {
-            status: prototypes.httpStatusCodes.OK,
-            headers: {},
-            body: {
-                ...req.body,
-                ...this.appInfo,
-            },
+        res.locals.api.status = prototypes.httpStatusCodes.OK;
+        res.locals.api.body = {
+            ...req.body,
+            ...this.appInfo,
         };
-
         next();
     }
 
     public patch(req: Request, res: Response, next: NextFunction) {
-        res.locals.sendApi = {
-            status: prototypes.httpStatusCodes.OK,
-            headers: {},
-            body: {
-                ...req.body,
-                ...this.appInfo,
-            },
+        res.locals.api.status = prototypes.httpStatusCodes.OK;
+        res.locals.api.body = {
+            ...req.body,
+            ...this.appInfo,
         };
-
         next();
     }
 
     public put(req: Request, res: Response, next: NextFunction) {
-        res.locals.sendApi = {
-            status: prototypes.httpStatusCodes.OK,
-            headers: {},
-            body: {
-                ...req.body,
-                ...this.appInfo,
-            },
+        res.locals.api.status = prototypes.httpStatusCodes.OK;
+        res.locals.api.body = {
+            ...req.body,
+            ...this.appInfo,
         };
-
         next();
     }
 
     public delete(req: Request, res: Response, next: NextFunction) {
-        res.locals.sendApi = {
-            status: prototypes.httpStatusCodes.OK,
-            headers: {},
-            body: {
-                ...this.appInfo,
-            },
+        res.locals.api.status = prototypes.httpStatusCodes.OK;
+        res.locals.api.body = {
+            ...this.appInfo,
         };
-
         next();
     }
 }
