@@ -5,6 +5,7 @@ export class Welcome extends Controller {
     private appInfo;
     private debug = new lib.log.Logger({
         moduleName: "app:controller-welcome",
+        type: "log",
     });
 
     constructor() {
@@ -24,7 +25,7 @@ export class Welcome extends Controller {
         res.locals.api.body = {
             ...this.appInfo,
         };
-        next();
+        next({ status: 500, headers: {}, body: { message: "invalid" } });
     }
 
     public post(req: Request, res: Response, next: NextFunction) {
